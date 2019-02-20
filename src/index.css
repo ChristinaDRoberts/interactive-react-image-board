@@ -12,3 +12,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
+.mainApp{
+  background-color: lightblue;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.heading{
+
+  color: aquamarine;
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+
+}
+
+img{
+  height: 300px;
+  width: 300px;
+}
