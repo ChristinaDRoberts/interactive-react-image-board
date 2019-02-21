@@ -19,18 +19,20 @@ class ImageForm extends Component {
   }
 
   handleChange(e) {
-        console.log(e.target);
+      console.log(e.target);
 
-        if(e.target.name === 'url') {
-            this.setState({url: e.target.value})
+      if (e.target.name === 'url') {
+          this.setState({url: e.target.value})
 
 
-        }else if(e.target.name === 'caption') {
-            this.setState({caption : e.target.value})
+      } else if (e.target.name === 'caption') {
+          this.setState({caption: e.target.value})
 
+      } else {
+          this.setState({name: e.target.value})
       }
-
   }
+
 
   handleSubmit(e) {
     e.preventDefault();
@@ -38,7 +40,7 @@ class ImageForm extends Component {
 
     this.props.handleSubmit(picture);
 
-    this.setState({caption: '', url: ''});
+    this.setState({caption: '', url: '', name: ''});
   }
 
   render() {

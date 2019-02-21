@@ -22,14 +22,64 @@ code {
 
 .heading{
 
-  color: aquamarine;
+  color: black;
   text-align: center;
   width: 90%;
   margin: 0 auto;
 
 }
 
+.feelFree{
+  text-align: center;
+
+
+}
+
+.pictureList{
+  text-align: center;
+}
+
+.formBox{
+  text-align: center;
+  /*//addButton*/
+}
+
 img{
-  height: 300px;
-  width: 300px;
+  height: 50%;
+  width: 50%;
+  margin-top: 10%;
+}
+
+.addPic{
+  background: cadetblue;
+  height:40px;
+  width: 16%;
+  margin-top:3%;
+}
+
+.picDiv{
+  text-align: center;
+  border: 2px solid white;
+  margin: 10% 10%;
+  background-color: lavenderblush ;
+  width:80%;
+}
+
+ul{
+  padding-left: 0;
+}
+
+.text{
+  background-color: whitesmoke;
+
+}
+
+label{
+  width: 30%;
+  /*height: 5%;*/
+  padding-left:10%;
+
+  @media(max-width:1000px):
+    display: block;
+
 }
