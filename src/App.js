@@ -8,9 +8,10 @@ class ImageForm extends Component {
         super(props);
         this.state = {
             caption: '',
-            url: ''
+            url: '',
+            name: ''
 
-        }
+        };
 
         this.handleChange = this.handleChange.bind(this);
 
@@ -18,7 +19,7 @@ class ImageForm extends Component {
   }
 
   handleChange(e) {
-        console.log(e.target)
+        console.log(e.target);
 
         if(e.target.name === 'url') {
             this.setState({url: e.target.value})
@@ -33,7 +34,7 @@ class ImageForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    let picture = {caption: this.state.caption, url: this.state.url};
+    let picture = {caption: this.state.caption, url: this.state.url, name: this.state.name};
 
     this.props.handleSubmit(picture);
 
@@ -42,24 +43,27 @@ class ImageForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        {/*<label htmlFor="name">*/}
-          {/*User Name:*/}
-          {/*<input type="text" name="name" id="name" value={this.state.name} onChange={this.handleChange}/>*/}
-        {/*</label>*/}
+        <div className="formBox">
+              <form onSubmit={this.handleSubmit}>
+                <label htmlFor="name">
+                  User Name:
+                  <input type="text" name="name" id="name" className="text" placeholder="Enter Your Name Here" value={this.state.name} onChange={this.handleChange}/>
+                </label>
 
-          <label htmlFor="caption">
-          Description:
-          <input type="text" name="caption" id="caption" value={this.state.caption} onChange={this.handleChange}/>
-        </label>
+                  <label htmlFor="caption">
+                  Description:
+                  <input type="text" name="caption" id="caption" className="text" placeholder="Enter A Caption Here" value={this.state.caption} onChange={this.handleChange}/>
+                </label>
 
-          <label htmlFor="url">
-          Image URL:
-          <input type="text" name="url" id="url" value={this.state.url} onChange={this.handleChange}/>
-        </label>
+                  <label htmlFor="url">
+                  Image URL:
+                  <input type="text" name="url" id="url" className="text" placeholder="Enter a Valid URL Here" value={this.state.url} onChange={this.handleChange}/>
+                </label>
+                  <br/>
 
-          <input type='submit' value='click me'/>
-      </form>
+                  <input type='submit' className="addPic" value='ADD PHOTO'/>
+              </form>
+        </div>
     )
   }
 
@@ -76,9 +80,10 @@ class PicturesList extends Component {
 
         let pictures = this.props.pictures.map(function(picture, index) {
             return (
-                <div key={index}>
+                <div key={index} className="picDiv">
                         <img src={picture.url}/>
                         <p>{picture.caption}</p>
+                        <p>By: {picture.name}</p>
                     </div>
             )
 
@@ -104,9 +109,9 @@ class ImageBoard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            pictures: [{caption: "Ocean Waves", url: "https://image.shutterstock.com/image-photo/pacific-ocean-260nw-611361698.jpg"},
-                {caption: "mountains", url: "https://images.pexels.com/photos/291732/pexels-photo-291732.jpeg?cs=srgb&dl=adventure-cold-daylight-291732.jpg&fm=jpg"},
-                {caption: "flower", url: "https://images.pexels.com/photos/87840/daisy-pollen-flower-nature-87840.jpeg?cs=srgb&dl=bloom-blossom-close-up-87840.jpg&fm=jpg"}]
+            pictures: [{caption: "My Escape", url: "https://i.pinimg.com/564x/b6/ae/51/b6ae511d854df7efd6786a1e7d16fa0e.jpg?b=t", name: "Kelly Bright"},
+                {caption: " Echo ", url: "https://images.pexels.com/photos/291732/pexels-photo-291732.jpeg?cs=srgb&dl=adventure-cold-daylight-291732.jpg&fm=jpg", name: "Sarah Waters"},
+                {caption: "Welcoming The Bees For Lunch", url: "https://images.pexels.com/photos/87840/daisy-pollen-flower-nature-87840.jpeg?cs=srgb&dl=bloom-blossom-close-up-87840.jpg&fm=jpg", name: "Theresa Modesto"}]
         }
         this.handleSubmit = this.handleSubmit.bind(this)
     }
@@ -125,9 +130,10 @@ class ImageBoard extends Component {
         console.log('this props', this.props)
                 return (
                     <div className="mainApp">
-                        <h1 className="heading"> Thanks For Visiting Christina's React Picture Board</h1>
-                             <ImageForm  handleSubmit={this.handleSubmit}/>
-                            <PicturesList pictures={this.state.pictures}/>
+                        <h1 className="heading"> Thank You For Visiting Christina's React Picture Board</h1>
+                        <h3 className="feelFree"> Feel Free To Add Your Own Pictures By Completing The Form Below</h3>
+                             <ImageForm  className="forms" handleSubmit={this.handleSubmit}/>
+                            <PicturesList className="pictureList" pictures={this.state.pictures}/>
                             ]
                     </div>
             )
