@@ -129,7 +129,7 @@ class ImageBoard extends Component {
 
 
             render(){
-        console.log('this props', this.props)
+        console.log('this props', this.props);
                 return (
                     <div className="mainApp">
                         <h1 className="heading"> Thank You For Visiting Christina's React Picture Board</h1>
