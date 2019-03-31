@@ -114,7 +114,7 @@ class ImageBoard extends Component {
             pictures: [{caption: "My Escape", url: "https://i.pinimg.com/564x/b6/ae/51/b6ae511d854df7efd6786a1e7d16fa0e.jpg?b=t", name: "Kelly Bright"},
                 {caption: " Echo ", url: "https://images.pexels.com/photos/291732/pexels-photo-291732.jpeg?cs=srgb&dl=adventure-cold-daylight-291732.jpg&fm=jpg", name: "Sarah Waters"},
                 {caption: "Welcoming The Bees For Lunch", url: "https://images.pexels.com/photos/87840/daisy-pollen-flower-nature-87840.jpeg?cs=srgb&dl=bloom-blossom-close-up-87840.jpg&fm=jpg", name: "Theresa Modesto"}]
-        }
+        };
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
@@ -136,7 +136,7 @@ class ImageBoard extends Component {
                         <h3 className="feelFree"> Feel Free To Add Your Own Pictures By Completing The Form Below</h3>
                              <ImageForm  className="forms" handleSubmit={this.handleSubmit}/>
                             <PicturesList className="pictureList" pictures={this.state.pictures}/>
-                            ]
+
                     </div>
             )
         }
