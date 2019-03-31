@@ -1,1 +1,1 @@
-web: gunicorn app.image-board
+web: gunicorn 
